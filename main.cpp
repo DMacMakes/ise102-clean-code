@@ -3,50 +3,43 @@
 #include "include/ise102.h"
 using namespace std;
 
-int getGuessFromUser()
+int get_fromuser()
 {
-  string error = "";
-  int guess = -1;
-  do
-  {
-    if (error != "") print(error);
-    print("Enter a number betwixt 10 and 15 > ");
-    cin >> guess;
+  string Error;  // string for an error
+
+
+  int guess_;
+  do {
+    if (Error != "") print(Error);
+    print("Enter a number between 10 and 15 > "); cin >> guess_;
     
-    if(guess >=10 && guess <= 15)
-    {
-      error = "";
-    } else
-    {
-      error = "Welp, you had one job. Try again.\n";
-    }
+    if
+    (guess_ >=10 && guess_ <= 15) {
+      Error = ""; } 
+    else {
+      Error = "Welp, you had one job. Try again.\n"; }
   }
-  while (error != "");
-  return guess;
+  while (Error != "");
+
+
+  return (guess_);
 }
 
 int main() {
   clearScreen();
 
-  print("Welcome to guessy world!\n\n");
+  print("Welcome to guessy world!\n\n")
+  ;
 
+  int input = get_fromuser();
 
-  int guess = getGuessFromUser();
-
-  auto title_style = makeStyle( color::dark_violet,
+  auto TITLE_STYLE = makeStyle( color::dark_violet,
                                 color::powder_blue,
                                 emphasis::bold ); 
   
-  std::string name = "Damo";
-  print(title_style, "So, {0}.. You're going with {1}, is that right?\n", name, guess);
-  delay(500);
-  print("Ok mate.\n\n");
+  std::string var = "Damo";  // Create a string called var 
 
-  // Using fmt's print. 
-  
-  // Foreground and background colours plus, if you're on linus, emphasise with bold/underline etc.
-/*  auto error_style = makeStyle( color::beige,
-                                color::crimson,
-                                emphasis::bold);
-  */
-}
+
+  print(TITLE_STYLE, "So, {0}.. You're going with {1}, is that right?\n", var, input);
+  delay  (500);
+  print("Nice to meet you anyway.\n\n"); }
